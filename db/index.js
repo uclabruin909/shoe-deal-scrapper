@@ -11,7 +11,7 @@ let serverOpts = {
 let dbURI = `mongodb://${dbKeys.username}:${dbKeys.pswd}@ds053320.mlab.com:53320/node`;
 
 //connect to database
-mongoose.connect(dbURI, opts);
+mongoose.connect(dbURI, serverOpts);
 
 //define connection event handlers
 mongoose.connection.on('connected', function () {
