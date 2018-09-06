@@ -21,7 +21,7 @@
 		"sweepType": "static",
 		"selectKeys": {
 			"name": ".PD_BrandStyle span[itemprop='name']",
-			"color": "",
+			"colors": "",
 			"origPrice": "",
 			"curPrice": "",
 			"imgSrc": "",
