@@ -10,13 +10,17 @@
 				"https://www.shoes.com/discount-mens-sandals.htm?display=3x32",
 				"https://www.shoes.com/discount-mens-sandals.htm?display=3x32",
 			],
-			"selectorKeys": {
-				"href": ""
-			}
+			"targetEl": [{
+        "name": "Shoe Item",
+        "selector": "",
+        "childSelectKeys": {
+          "href": "",
+        }
+      }],
 		}],
 		"itemDetail": {
 			"sweepType": "static",
-			"selectorKeys": {
+			"selectKeys": {
 				"name": "",
 				"brand": "",
 				"site": "",
@@ -32,7 +36,7 @@
 				"updatedDate": "",
 			}
 		}
-			
+
 	},
 
 
