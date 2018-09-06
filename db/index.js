@@ -2,9 +2,7 @@ const mongoose = require('mongoose');
 const dbKeys = require('./dbKeys.json');
 
 let serverOpts = {
-	server: {
-		socketOptions: {keepAlive: 1}
-	}
+	keepAlive: true
 };
 
 //Build connection string
