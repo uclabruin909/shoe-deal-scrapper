@@ -22,11 +22,11 @@
 		"sweepType": "static",
 		"selectKeys": {
 			"name": ".PD_BrandStyle span[itemprop='name']",
-			"origPrice": "",
-			"curPrice": "",
-			"imgSrc": "",
-			"availSize": "",
-			"details": "",
+			"origPrice": ".style-price span.origPrice",
+			"curPrice": ".style-price span.price",
+			"imgSrc": ".prodImg img[itemprop='image']",
+			"availSize": ".input-select select.SizeWidth option",
+			"details": "#ProductDescription li",
 			"rating": "",
 			"updatedDate": ""
 		}
