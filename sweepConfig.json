@@ -1,0 +1,42 @@
+[
+	{
+		"store": "Famous Footwear",
+		"baseURL": "https://www.shoes.com",
+		"pages": [{
+			"category": "Athletic",
+			"sweepType": "static",
+			"entries": [
+				"https://www.shoes.com/discount-mens-sandals.htm?display=3x32",
+				"https://www.shoes.com/discount-mens-sandals.htm?display=3x32",
+				"https://www.shoes.com/discount-mens-sandals.htm?display=3x32",
+			],
+			"selectorKeys": {
+				"href": ""
+			}
+		}],
+		"itemDetail": {
+			"sweepType": "static",
+			"selectorKeys": {
+				"name": "",
+				"brand": "",
+				"site": "",
+				"category": "",
+				"href": "",
+				"color": "",
+				"origPrice": "",
+				"curPrice": "",
+				"imgSrc": "",
+				"availSize": "",
+				"details": "",
+				"rating": "",
+				"updatedDate": "",
+			}
+		}
+			
+	},
+
+
+
+
+]
+
