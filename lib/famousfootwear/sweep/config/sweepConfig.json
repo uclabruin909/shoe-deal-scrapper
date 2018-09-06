@@ -13,7 +13,8 @@
 			"targetEl": ".productCellWrapper",
 			"selectKeys": {
 				"href": ".productImage>a",
-				"brand": ".productBrandTitleColor .brand"
+				"brand": ".productBrandTitleColor .brand",
+				"colors": ".productBrandTitleColor .color"
 			}		
 		}		
 	}],
@@ -21,7 +22,6 @@
 		"sweepType": "static",
 		"selectKeys": {
 			"name": ".PD_BrandStyle span[itemprop='name']",
-			"colors": "",
 			"origPrice": "",
 			"curPrice": "",
 			"imgSrc": "",
