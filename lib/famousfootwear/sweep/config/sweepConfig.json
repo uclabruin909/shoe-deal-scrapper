@@ -34,6 +34,9 @@
 			"rating": "",
 			"updatedDate": ""
 		}
+	},
+	"fileWrite": {
+		"path": "./data/"
 	}
 
 }
