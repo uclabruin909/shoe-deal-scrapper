@@ -6,7 +6,7 @@ let ShoeSchema = new mongoose.Schema({
 	site: { type: String, default: '' },
 	category: { type: String, default: '' },
 	href: { type: String, default: '' },
-	color: { type: String, default: '' },
+	colors: { type: Array, default: [] },
 	origPrice: { type: Number, default: 0 },
 	curPrice: { type: Number, default: 0 },
 	imgSrc: { type: String, default: '' },
