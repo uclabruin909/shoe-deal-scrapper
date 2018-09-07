@@ -13,7 +13,7 @@ let ShoeSchema = new mongoose.Schema({
 	availSize: { type: Array, default: [] },
 	details: { type: Array, default: [] },
 	rating: { type: Number, default: 0 },
-	updatedDate: { type: Date, default: new Date().now },
+	createdDate: { type: String, default: '' },
 
 });
 

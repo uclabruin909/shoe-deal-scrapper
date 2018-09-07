@@ -27,8 +27,7 @@
 			"imgSrc": ".prodImg img[itemprop='image']",
 			"availSize": ".input-select select.SizeWidth option",
 			"details": "#ProductDescription li",
-			"rating": "",
-			"updatedDate": ""
+			"rating": ".bv-rating-stars-container .bv-rating-stars-on",
 		}
 	},
 	"fileWrite": {
