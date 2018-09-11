@@ -1,5 +1,5 @@
-// const db = require('./db/index.js');
-// const ShoeModel = require('./model/shoe.js');
+const db = require('./db/index.js');
+const ShoeModel = require('./model/shoe.js');
 const FamousFootwear = require('./lib/famousfootwear');
 
 var page1 = {
@@ -14,27 +14,28 @@ var page2 = {
 	site: 'Finishline'
 };
 
-var pageList = [page2];
+var pageList = [page1, page2];
 
-let getItemsFromPages = async (pageArr) => {
+let getItemListFromUrls = async (urlList, defaultProps) => {
+	let defaultPropsMap = defaultProps || {};
 	let itemCollection = [];
-	for (let page of pageArr) {
-		let defaultProps = {
-			category: page.category,
-			site: page.site,
-		};
-		let items = await FamousFootwear.itemListSweep.staticSweep(page.url, defaultProps);
+	for (let url of urlList) {
+		let items = await FamousFootwear.itemListSweep.staticSweep(page.url, defaultPropsMap);
 		itemCollection = [...itemCollection, ...items];
 	}
 	return itemCollection;	
 }
 
-let getItemDatafromCollection = async (itemCollection) => {
-	let itemObj = itemCollection[0];
-	let itemData = await FamousFootwear.itemDataSweep.staticSweep(itemObj);
-	console.log(itemData);
-} 
+let saveItemsToDB = async (itemCollection) => {
+	return ShoeModel.insertMany(itemCollection)
+		.then((items) => {
+			console.log('Items have been saved');
+		})
+		.catch((err) => {
+			console.log('ERROR WHILE SAVING:', err);
+		});
+}; 
 
 
-getItemsFromPages(pageList)
-.then(getItemDatafromCollection);
+getItemListFromUrls(pageList)
+.then(saveItemsToDB);
