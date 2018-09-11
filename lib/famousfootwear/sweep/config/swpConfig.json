@@ -1,0 +1,27 @@
+{
+	"store": "Famous Footwear",
+	"baseURL": "https://www.famousfootwear.com",
+	"item_listSweep": {
+		"selectorMap": {
+			"targetEl": ".productCellWrapper",
+			"href": ".productImage>a",
+			"brand": ".productBrandTitleColor .brand",
+			"colors": ".productBrandTitleColor .color"			
+		}
+	},
+	"item_dataSweep": {
+		"selectorMap": {
+			"name": ".PD_BrandStyle span[itemprop='name']",
+			"origPrice": ".style-price span.origPrice",
+			"curPrice": ".style-price span.price",
+			"imgSrc": ".prodImg img[itemprop='image']",
+			"availSize": ".input-select select.SizeWidth option",
+			"details": "#ProductDescription li",
+			"rating": ".bv-rating-stars-container .bv-rating-stars-on"	
+		}
+	},
+	"fileWrite": {
+		"path": "./data/"
+	}
+
+}
