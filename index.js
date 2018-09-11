@@ -1,6 +1,7 @@
+const FamousFootwear = require('./lib/famousfootwear');
+const Utils = require('./lib/utils.js');
 const db = require('./db/index.js');
 const ShoeModel = require('./model/shoe.js');
-const FamousFootwear = require('./lib/famousfootwear');
 
 var page1 = {
 	url: 'https://www.famousfootwear.com/en-US/Mens/_/_/Athletic+Shoes/On+Sale/Products.aspx',
@@ -14,16 +15,29 @@ var page2 = {
 	site: 'Finishline'
 };
 
-var pageList = [page1, page2];
+var urlList = [page1.url, page2.url];
 
 let getItemListFromUrls = async (urlList, defaultProps) => {
 	let defaultPropsMap = defaultProps || {};
 	let itemCollection = [];
 	for (let url of urlList) {
-		let items = await FamousFootwear.itemListSweep.staticSweep(page.url, defaultPropsMap);
+		let items = await FamousFootwear.itemListSweep.staticSweep(url, defaultPropsMap);
 		itemCollection = [...itemCollection, ...items];
 	}
 	return itemCollection;	
+}
+
+let saveItemsToJSON = async (itemCollection) => {
+	let path = __dirname + '/data/';
+	let fileName = '2018.09.11-test';
+	let fileType = '.json';
+	let filePath = path + fileName + fileType;
+
+	Utils.writeJSONFile(filePath, itemCollection, function(err) {
+		if (err) {
+			console.log('Error writing JSON file');
+		}
+	});
 }
 
 let saveItemsToDB = async (itemCollection) => {
@@ -34,8 +48,12 @@ let saveItemsToDB = async (itemCollection) => {
 		.catch((err) => {
 			console.log('ERROR WHILE SAVING:', err);
 		});
+};
+
+let getIncompleteData = async () => {
+
 }; 
 
 
-getItemListFromUrls(pageList)
-.then(saveItemsToDB);
+getItemListFromUrls(urlList)
+.then(saveItemsToJSON);
