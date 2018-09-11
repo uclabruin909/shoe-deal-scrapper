@@ -1,7 +1,7 @@
 const FamousFootwear = require('./lib/famousfootwear');
 const Utils = require('./lib/utils.js');
-const db = require('./db/index.js');
-const ShoeModel = require('./model/shoe.js');
+// const db = require('./db/index.js');
+// const ShoeModel = require('./model/shoe.js');
 
 var page1 = {
 	url: 'https://www.famousfootwear.com/en-US/Mens/_/_/Athletic+Shoes/On+Sale/Products.aspx',
@@ -33,7 +33,12 @@ let saveItemsToJSON = async (itemCollection) => {
 	let fileType = '.json';
 	let filePath = path + fileName + fileType;
 
+	console.log('About to write JSON file');
+	await Utils.wait(5000);
+	console.log('5 seconds has passed');
+
 	Utils.writeJSONFile(filePath, itemCollection, function(err) {
+		console.log('Wrote file');
 		if (err) {
 			console.log('Error writing JSON file');
 		}
