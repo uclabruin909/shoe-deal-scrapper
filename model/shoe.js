@@ -14,6 +14,7 @@ let ShoeSchema = new mongoose.Schema({
 	details: { type: Array, default: [] },
 	rating: { type: Number, default: 0 },
 	createdDate: { type: String, default: '' },
+	complete: { type: Boolean, default: false },
 
 });
 
