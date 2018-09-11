@@ -19,9 +19,6 @@
 			"details": "#ProductDescription li",
 			"rating": ".bv-rating-stars-container .bv-rating-stars-on"	
 		}
-	},
-	"fileWrite": {
-		"path": "./data/"
 	}
 
 }
