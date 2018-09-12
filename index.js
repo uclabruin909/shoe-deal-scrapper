@@ -53,9 +53,13 @@ let saveItemsToDB = async (itemCollection) => {
 		});
 };
 
+let testProps = {
+	'category': 'watches',
+	'balloon': 33,
+	'store': 'walmart'
+};
 
-
-FamousFootwear.sweepItemListFromUrls(urlList)
+FamousFootwear.sweepItemListFromUrls(urlList, testProps)
 .then((results) => {
 	// FamousFootwear.saveCollectionToDB(results);
 	return results;
@@ -68,4 +72,7 @@ FamousFootwear.sweepItemListFromUrls(urlList)
 		FamousFootwear.addItem(itemData);
 	}
 	console.log(FamousFootwear);
+})
+.catch((err) => {
+	console.log('Error', err);
 })
