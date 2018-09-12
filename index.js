@@ -6,16 +6,14 @@ const Utils = require('./lib/utils.js');
 var page1 = {
 	url: 'https://www.famousfootwear.com/en-US/Mens/_/_/Athletic+Shoes/On+Sale/Products.aspx',
 	category: 'Sandals',
-	site: 'Finishline'
 };
 
 var page2 = {
 	url: 'https://www.famousfootwear.com/en-US/Mens/_/_/Athletic+Shoes~Fashion+Sneakers/On+Sale/Products.aspx',
 	category: 'Comfort',
-	site: 'Finishline'
 };
 
-var urlList = [page1.url, page2.url];
+var urlList = [page1.url];
 
 let getItemListFromUrls = async (urlList, defaultProps) => {
 	let defaultPropsMap = defaultProps || {};
@@ -46,20 +44,22 @@ let saveItemsToJSON = async (itemCollection) => {
 }
 
 let saveItemsToDB = async (itemCollection) => {
-	return ShoeModel.insertMany(itemCollection)
+	ShoeModel.insertMany(itemCollection)
 		.then((items) => {
 			console.log('Items have been saved');
 		})
 		.catch((err) => {
-			console.log('ERROR WHILE SAVING:', err);
+			console.log('ERROR: while saving collection:', err);
 		});
 };
 
 
 
-FamousFootwear.getItemListFromUrls(urlList)
-.then((result) => {
-	FamousFootwear.addCollection(result);
-	FamousFootwear.saveItemsToJSON(result);
-	console.log('JSON file written');
+FamousFootwear.sweepItemListFromUrls(urlList)
+.then((results) => {
+	FamousFootwear.saveCollectionToDB(results);
+	return results;
 });
+// .then((results) => {
+// 	for (let itemObj of results)
+// })
