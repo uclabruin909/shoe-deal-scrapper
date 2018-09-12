@@ -55,10 +55,11 @@ let saveItemsToDB = async (itemCollection) => {
 		});
 };
 
-let getIncompleteData = async () => {
-
-}; 
 
 
-getItemListFromUrls(urlList)
-.then(saveItemsToJSON);
+FamousFootwear.getItemListFromUrls(urlList)
+.then((result) => {
+	FamousFootwear.addCollection(result);
+	FamousFootwear.saveItemsToJSON(result);
+	console.log('JSON file written');
+});
