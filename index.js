@@ -19,7 +19,7 @@ let getItemListFromUrls = async (urlList, defaultProps) => {
 	let defaultPropsMap = defaultProps || {};
 	let itemCollection = [];
 	for (let url of urlList) {
-		let items = await FamousFootwear.itemListSweep.staticSweep(url, defaultPropsMap);
+		let items = await FamousFootwear.itemListSweep.static(url, defaultPropsMap);
 		itemCollection = [...itemCollection, ...items];
 	}
 	return itemCollection;	
@@ -57,9 +57,15 @@ let saveItemsToDB = async (itemCollection) => {
 
 FamousFootwear.sweepItemListFromUrls(urlList)
 .then((results) => {
-	FamousFootwear.saveCollectionToDB(results);
+	// FamousFootwear.saveCollectionToDB(results);
 	return results;
-});
-// .then((results) => {
-// 	for (let itemObj of results)
-// })
+})
+.then(async (results) => {
+	let shorterResults = results.slice(0, 20);
+	for (let itemObj of shorterResults) {
+		let itemData = await FamousFootwear.itemDataSweep.static(itemObj);
+		await Utils.wait(1000);
+		FamousFootwear.addItem(itemData);
+	}
+	console.log(FamousFootwear);
+})
