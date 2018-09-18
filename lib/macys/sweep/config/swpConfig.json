@@ -23,6 +23,21 @@
 	"itemListPages": [{
 		"category": "Athletic",
 		"urlList": ["https://www.macys.com/shop/mens-clothing/sale-clearance/Shoe_type/Sneakers?id=43387"]
+	}, {
+		"category": "Boot",
+		"urlList": ["https://www.macys.com/shop/mens-clothing/sale-clearance/Shoe_type/Boots?id=43387"]
+	}, {
+		"category": "Casual",
+		"urlList": ["https://www.macys.com/shop/mens-clothing/sale-clearance/Shoe_type/Casual%20Shoes?id=43387"]
+	}, {
+		"category": "Dress",
+		"urlList": ["https://www.macys.com/shop/mens-clothing/sale-clearance/Shoe_type/Oxfords?id=43387"]
+	}, {
+		"category": "Loafer",
+		"urlList": ["https://www.macys.com/shop/mens-clothing/sale-clearance/Shoe_type/Loafers?id=43387"]
+	}, {
+		"category": "SlipOn",
+		"urlList": ["https://www.macys.com/shop/mens-clothing/sale-clearance/Shoe_type/Slip%20On?id=43387"]
 	}],
 	"writePath": "/data/"
 
