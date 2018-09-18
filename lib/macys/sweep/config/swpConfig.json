@@ -1,0 +1,19 @@
+{
+	"store": "Macys",
+	"baseURL": "https://www.macys.com",
+	"item_listSweep": {
+		"selectorMap": {
+			"targetEl": ".productThumbnailItem .productThumbnail",
+			"href": ".productDescription .productDescLink"		
+		}
+	},
+	"item_dataSweep": {
+		"selectorMap": {}
+	},
+	"itemListPages": [{
+		"category": "Athletic",
+		"urlList": ["https://www.macys.com/shop/mens-clothing/sale-clearance/Shoe_type/Sneakers?id=43387"]
+	}],
+	"writePath": "/data/"
+
+}
