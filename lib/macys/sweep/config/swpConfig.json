@@ -8,7 +8,17 @@
 		}
 	},
 	"item_dataSweep": {
-		"selectorMap": {}
+		"selectorMap": {
+			"name": ".product-name[data-auto='product-name']",
+			"brand": ".product-brand-title a[data-auto='product-brand']",
+			"origPrice": ".price[data-auto='main-price']",
+			"curPrice": "span[data-auto='sale-price']",
+			"colors": "span[data-auto='selected-color']",
+			"availSize": "div[data-auto='size-section'] li",
+			"imgSrc": ".main-image-container li img",
+			"details": "ul[data-auto='product-description-bullets'] li",
+			"rating": ".rating .red-star"	
+		}
 	},
 	"itemListPages": [{
 		"category": "Athletic",
