@@ -1,0 +1,44 @@
+{
+	"store": "Famous Footwear",
+	"baseURL": "https://www.famousfootwear.com",
+	"item_listSweep": {
+		"selectorMap": {
+			"targetEl": ".productCellWrapper",
+			"href": ".productImage>a",
+			"brand": ".productBrandTitleColor .brand",
+			"colors": ".productBrandTitleColor .color"			
+		}
+	},
+	"item_dataSweep": {
+		"selectorMap": {
+			"name": ".PD_BrandStyle span[itemprop='name']",
+			"origPrice": ".style-price span.origPrice",
+			"curPrice": ".style-price span.price",
+			"imgSrc": ".prodImg img[itemprop='image']",
+			"availSize": ".input-select select.SizeWidth option",
+			"details": "#ProductDescription li",
+			"rating": ".bv-rating-stars-container .bv-rating-stars-on"	
+		}
+	},
+	"itemListPages": [{
+		"category": "Athletic",
+		"urlList": ["https://www.famousfootwear.com/en-US/Mens/_/_/Athletic+Shoes/On+Sale/Products.aspx"]
+	}, {
+		"category": "Boot",
+		"urlList": ["https://www.famousfootwear.com/en-US/Mens/_/_/Boots/On+Sale/Products.aspx"]
+	}, {
+		"category": "Casual",
+		"urlList": ["https://www.famousfootwear.com/en-US/Mens/_/_/Casual+Shoes/On+Sale/Products.aspx"]
+	}, {
+		"category": "Dress",
+		"urlList": ["https://www.famousfootwear.com/en-US/Mens/_/_/Dress+Shoes/On+Sale/Products.aspx"]
+	}, {
+		"category": "Loafer",
+		"urlList": ["https://www.famousfootwear.com/en-US/Mens/_/_/Casual+Shoes~Loafers/On+Sale/Products.aspx"]
+	}, {
+		"category": "SlipOn",
+		"urlList": ["https://www.famousfootwear.com/en-US/Mens/_/_/Sandals/On+Sale/Products.aspx"]
+	}],
+	"writePath": "/data/"
+
+}
